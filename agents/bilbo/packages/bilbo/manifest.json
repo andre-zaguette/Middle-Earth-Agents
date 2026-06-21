@@ -1,0 +1,15 @@
+{
+  "name": "bilbo",
+  "display_name": "Bilbo Baggins",
+  "author_name": "Andre Zaguette",
+  "author_url": "https://github.com/andre-zaguette",
+  "homepage": "https://github.com/andre-zaguette/Bilbo",
+  "repository": "https://github.com/andre-zaguette/Bilbo",
+  "version": "0.1.0",
+  "license": "Proprietary",
+  "brand_color": "#92400E",
+  "codex_plugin_description": "PM/PO plugin for requirements gathering, scope definition, and project documentation. Maps the quest before any agent builds.",
+  "claude_plugin_description": "PM/PO plugin for Claude. Maps the quest, gathers requirements, writes the docs before any code is written.",
+  "short_description": "PM/PO plugin. Requirements first. Map before build.",
+  "default_prompt": "Use $bilbo to scope this quest, gather requirements, define acceptance criteria, and produce docs/contexto.md before any agent acts."
+}

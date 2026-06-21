@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss",
+    "stylelint-config-tailwindcss"
+  ],
+  "rules": {
+    "color-no-invalid-hex": true,
+    "color-named": "never",
+    "declaration-no-important": true,
+    "value-keyword-case": "lower",
+    "custom-property-pattern": "^[a-z][a-z0-9-]*$",
+    "selector-class-pattern": "^[a-z][a-z0-9-]*(__[a-z][a-z0-9-]*)?(--[a-z][a-z0-9-]*)?$",
+    "no-duplicate-selectors": true,
+    "no-empty-source": true
+  }
+}

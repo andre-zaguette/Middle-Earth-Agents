@@ -1,0 +1,21 @@
+[submodule "agents/galadriel"]
+	path = agents/galadriel
+	url = git@github.com-zaguette:andre-zaguette/Galadriel.git
+[submodule "agents/Beorn"]
+	path = agents/beorn
+	url = git@github.com-zaguette:andre-zaguette/Beorn.git
+[submodule "agents/celebrimbor"]
+	path = agents/celebrimbor
+	url = git@github.com-zaguette:andre-zaguette/Celebrimbor.git
+[submodule "agents/elrond"]
+	path = agents/elrond
+	url = git@github.com-zaguette:andre-zaguette/Elrond.git
+[submodule "agents/boromir"]
+	path = agents/boromir
+	url = git@github.com-zaguette:andre-zaguette/Boromir.git
+[submodule "agents/gandalf"]
+	path = agents/gandalf
+	url = git@github.com-zaguette:andre-zaguette/Gandalf.git
+[submodule "agents/palantir"]
+	path = agents/palantir
+	url = git@github.com-zaguette:andre-zaguette/Palantir.git

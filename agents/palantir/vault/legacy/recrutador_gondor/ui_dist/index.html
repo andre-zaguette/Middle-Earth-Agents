@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salão de Observação de Gondor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; font-family: sans-serif; }
+        .vaga-card { background-color: #1e293b; border: 1px solid #334155; transition: transform 0.2s; }
+        .vaga-card:hover { transform: translateY(-4px); border-color: #3b82f6; }
+    </style>
+</head>
+<body class="p-8">
+    <header class="mb-8 border-b border-slate-700 pb-4 flex justify-between items-center">
+        <div>
+            <h1 class="text-3xl font-bold text-blue-400">🛡️ Recrutador de Gondor</h1>
+            <p class="text-slate-400">Vigilância constante sobre as forjas do LinkedIn</p>
+        </div>
+        <button onclick="fetchVagas()" class="bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded text-sm font-bold">🔄 Sincronizar Palantír</button>
+    </header>
+    <div id="loading" class="text-center py-20 text-xl animate-pulse">Consultando as Crônicas...</div>
+    <div id="error" class="hidden text-center py-20 text-red-400 text-xl">Falha na conexão com as forjas.</div>
+    <div id="vagas-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    <script>
+        // Nova API estável em Python na porta 5050
+        const API_URL = 'http://192.168.15.7:5050/vagas';
+        async function fetchVagas() {
+            const container = document.getElementById('vagas-container');
+            const loading = document.getElementById('loading');
+            const errorDiv = document.getElementById('error');
+            loading.style.display = 'block';
+            container.innerHTML = '';
+            errorDiv.classList.add('hidden');
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error();
+                const vagas = await response.json();
+                renderVagas(vagas);
+            } catch (err) {
+                loading.style.display = 'none';
+                errorDiv.classList.remove('hidden');
+            }
+        }
+        function renderVagas(vagas) {
+            const container = document.getElementById('vagas-container');
+            document.getElementById('loading').style.display = 'none';
+            if (!vagas || vagas.length === 0) {
+                container.innerHTML = '<div class="col-span-full text-center text-slate-500 py-20">Nenhuma vaga nova nas fronteiras.</div>';
+                return;
+            }
+            container.innerHTML = vagas.map(vaga => `
+                <div class="vaga-card p-6 rounded-lg shadow-xl flex flex-col justify-between border-l-4 border-l-blue-600">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-2 py-0.5 text-[10px] font-black rounded bg-blue-900 text-blue-300 uppercase">${vaga.status || 'nova'}</span>
+                            <span class="text-slate-600 text-[10px] font-mono">#${vaga.id}</span>
+                        </div>
+                        <h2 class="text-lg font-bold mb-1 leading-tight">${vaga.titulo}</h2>
+                        <p class="text-blue-400 mb-3 font-semibold text-sm">${vaga.empresa}</p>
+                        <div class="text-slate-500 text-xs flex items-center gap-1">📍 ${vaga.localizacao || 'Remoto'}</div>
+                    </div>
+                    <div class="flex gap-2 mt-6">
+                        <a href="${vaga.link}" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-500 text-white text-center py-2 rounded text-sm font-bold transition">Ver Detalhes</a>
+                        <button class="w-10 h-10 flex items-center justify-center border border-slate-700 hover:bg-slate-800 rounded transition text-slate-500">✕</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        fetchVagas();
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+[submodule "agents/gandalf"]
+	path = agents/gandalf
+	url = https://github.com/andre-zaguette/Gandalf.git
+[submodule "agents/boromir"]
+	path = agents/boromir
+	url = https://github.com/andre-zaguette/Boromir.git
+[submodule "agents/palantir"]
+	path = agents/palantir
+	url = https://github.com/andre-zaguette/Palantir.git
+[submodule "agents/radagast"]
+	path = agents/radagast
+	url = git@github.com:andre-zaguette/Radagast.git
+[submodule "agents/galadriel"]
+	path = agents/galadriel
+	url = git@github.com:andre-zaguette/Galadriel.git
+[submodule "agents/elrond"]
+	path = agents/elrond
+	url = git@github.com:andre-zaguette/Elrond.git
+[submodule "agents/celebrimbor"]
+	path = agents/celebrimbor
+	url = git@github.com:andre-zaguette/Celebrimbor.git
+[submodule "agents/beorn"]
+	path = agents/beorn
+	url = git@github.com:andre-zaguette/Beorn.git
+[submodule "agents/bilbo"]
+	path = agents/bilbo
+	url = https://github.com/andre-zaguette/Bilbo.git
+[submodule "agents/narvi"]
+	path = agents/narvi
+	url = https://github.com/andre-zaguette/Narvi.git
+[submodule "agents/cirdan"]
+	path = agents/cirdan
+	url = git@github.com:andre-zaguette/Cirdan.git

@@ -1,0 +1,13 @@
+.DS_Store
+.env
+.env.*
+node_modules
+.cache
+tmp
+
+# Obsidian: keep shared config, ignore machine-local workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/.trash
+dist/

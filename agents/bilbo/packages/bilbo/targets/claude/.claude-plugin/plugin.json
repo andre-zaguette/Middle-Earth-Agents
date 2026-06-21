@@ -1,0 +1,8 @@
+{
+  "name": "bilbo",
+  "description": "PM/PO plugin for Claude. Maps the quest, gathers requirements, writes the docs before any code is written.",
+  "author": {
+    "name": "Andre Zaguette",
+    "url": "https://github.com/andre-zaguette"
+  }
+}
